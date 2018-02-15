@@ -1,1 +1,1 @@
-front-end-task
+Front end recruitment task
