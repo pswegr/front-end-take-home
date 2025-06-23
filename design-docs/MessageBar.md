@@ -1,5 +1,5 @@
 ## Overview
-Message bars are nonmodal semantic dialogs that can be displayed at the top of the page or contextually within a task flow.
+Message bars are nonmodal semantic dialogs that can be displayed only within a page flow
 
 ![Main.png](mockups/Main.png)
 
@@ -7,6 +7,9 @@ Message bars are nonmodal semantic dialogs that can be displayed at the top of t
 - Global message bars display nonmodal messages that inform users of updates or changes to system status.
 - Contextual message bars are most often used in task flows and forms, providing users additional context or information about a task.
 - Either can be used for critical system alerts or passive feedback.
+
+## Positioning
+- Component should be displayed within page flow (not as part of overlay)
 
 ## Modifiers
 There are 3 modifiers that can be used to change the Message bar:
@@ -30,7 +33,7 @@ Message bar can have a set of two buttons located at the bottom of the component
 
 
 ### Close icon
-Message bars are available in dismissible and nondismissible options. For example, global message bars containing critical information should remain in view, and therefore be nondismissible by the user.
+Message bars are available in dismissible and non-dismissible options. For example, global message bars containing critical information should remain in view, and therefore be non-dismissible by the user.
 
 ![CloseIcon.png](mockups/CloseIcon.png)
 
