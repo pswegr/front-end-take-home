@@ -1,5 +1,5 @@
 ## Overview
-Message bars are nonmodal semantic dialogs that can be displayed only within a page flow
+Message bars are nonmodal semantic dialogs that can be displayed only within a page flow.
 
 ![Main.png](mockups/Main.png)
 
