@@ -13,6 +13,6 @@
     - Green: #41BD56 (dark), #F2FEEF (light)
     - Yellow: #FFB31D (dark), #FFF7E6 (light)  
 - **Tools**: Angular. If you use AI, please attach prompts used to the solution. If you consider using a library to implement the component, prefer Angular Material.
-- **Solution**: Link to a GitHub repository containing the code with solution. The solution should contain an `.md` file containing a brief description of any additional features, use cases, or tests that weren't completed within the time limit, as well as AI prompts used (if any).
+- **Solution**: Link to a GitHub repository containing the code with your solution. The solution should contain an `.md` file with a brief description of any additional features, use cases, or tests that weren't completed within the time limit, as well as AI prompts used (if any).
 
 
