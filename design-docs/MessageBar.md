@@ -27,7 +27,7 @@ There are 4 types of Message bar
 - Error
 
 ### Buttons
-Message bar can have a set of two buttons located at the bottom of the component or on the right side of the component. Buttons are available only on two types of Message bars: information and error
+Message bar can have a set of two buttons located at the bottom of the component or on the right side of the component. Buttons are available only on two types of Message bars: Information and Error.
 
 ![Buttons.png](mockups/Buttons.png)
 
