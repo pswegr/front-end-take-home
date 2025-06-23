@@ -1,5 +1,5 @@
 ### Task: Implement Angular Message Bar Component
- Create re-usable message bar component based on variants and colors provided in mockups.
+ Create a re-usable message bar component based on variants and colors provided in the mockups.
 
 - **Time Limit**: 4 hours
 - **References**:
