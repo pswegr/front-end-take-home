@@ -1,0 +1,25 @@
+  @if (svc.current(); as cur) {
+    <div
+      [style.top]="cur.position === 'top' ? '0' : null"
+      [style.bottom]="cur.position === 'bottom' ? '0' : null"
+      (mouseenter)="svc.pause()"
+      (mouseleave)="svc.resume()"
+      style="pointer-events:none"
+    >
+      <app-message-bar
+        style="pointer-events:auto"
+        [type]="cur.type"
+        [position]="cur.position"
+        [title]="cur.title ?? ''"
+        [message]="cur.message ?? ''"
+        [dissmissible]="cur.dissmissible ?? true"
+        [buttonPosition]="cur.buttonPosition ?? 'none'"
+        [button1Text]="cur.button1Text ?? 'Action'"
+        [button2Text]="cur.button2Text ?? 'Cancel'"
+        [visible]="true"
+        (dismissed)="svc.dismissCurrent()"
+        (buttton1Clicked)="svc.button1Action()"
+        (buttton2Clicked)="svc.button2Action()"
+      />
+    </div>
+  }
