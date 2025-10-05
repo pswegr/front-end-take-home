@@ -1,0 +1,143 @@
+:host {
+      --bar-radius: 12px;
+      --bar-padding-y: 12px;
+      --bar-padding-x: 16px;
+      --bar-gap: 32px;
+      --bar-shadow: 0 8px 20px rgba(0,0,0,.12);
+      --left-accent-width: 6px;
+
+      position: fixed;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: block;
+      pointer-events: none;
+    }
+
+    :host(.pos-top)    { top: 12px; }
+
+    :host(.pos-bottom) { bottom: 12px; }
+
+    :host(.hidden) { display: none; }
+
+    .bar-container {
+      
+      &.dissmissable {
+        grid-template-columns: var(--left-accent-width) 1fr auto;
+      }
+
+      width: min(920px, calc(100% - 24px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: var(--left-accent-width) 1fr;
+      align-items: start;
+      column-gap: var(--bar-gap);
+      padding: var(--bar-padding-y) var(--bar-padding-x);
+      border-radius: var(--bar-radius);
+      box-shadow: var(--bar-shadow);
+      border: 1px solid var(--color-border);
+      background: var(--color-bg);
+      pointer-events: auto;
+      backdrop-filter: saturate(180%) blur(6px);
+      -webkit-backdrop-filter: saturate(180%) blur(6px);
+      animation: slideIn 220ms ease-out both;
+      height: auto;
+
+      .bar-content {
+        display: flex;
+        gap: 16px;
+        align-items: start;
+
+        &.after {   flex-direction: row; }
+        &.bottom {   flex-direction: column; }
+      }
+    }
+
+    .left-accent {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      width: var(--left-accent-width);
+      border-radius: calc(var(--bar-radius) - 4px);
+      background: var(--color-main);
+      height: 100%;
+    }
+
+    .icon { grid-column: 2; margin-top: 2px; line-height: 0; align-items: center; display: flex; height: 100%; }
+
+    .icon svg path { fill: var(--color-main); }
+
+    .button {
+      font-size: 0.92rem;
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--color-main);
+      background: transparent;
+      color: var(--color-main);
+      cursor: pointer;
+    }
+
+    .content-container { display: flex; gap: 12px; width: 100%; }
+
+    .buttons-container {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    .text-content { grid-column: 3; display: grid; gap: 2px; min-width: 0; }
+
+    .title { font-weight: 700; font-size: 0.95rem; color: var(--color-ink-strong); }
+
+    .message { color: var(--color-ink); font-size: 0.92rem; line-height: 1.35; overflow-wrap: anywhere; }
+
+    .close-btn {
+      grid-column: 4;
+      appearance: none; border: none; background: transparent;
+      padding: 6px; margin: -6px -6px -6px 0; border-radius: 8px; cursor: pointer;
+    }
+
+    .close-btn:hover { background: rgba(0,0,0,.05); }
+
+    .close-btn svg path { fill: var(--color-ink); }
+
+    :host(.type-info) {
+      --color-main: #1e88e5;
+      --color-bg: rgba(30,136,229,0.08);
+      --color-border: rgba(30,136,229,0.25);
+      --color-ink: #0b2742;
+      --color-ink-strong: #062034;
+    }
+
+    :host(.type-success) {
+      --color-main: #2e7d32;
+      --color-bg: rgba(46,125,50,0.09);
+      --color-border: rgba(46,125,50,0.25);
+      --color-ink: #0f2a12;
+      --color-ink-strong: #0c1f0e;
+    }
+    
+    :host(.type-warning) {
+      --color-main: #f6a500;
+      --color-bg: rgba(246,165,0,0.10);
+      --color-border: rgba(246,165,0,0.28);
+      --color-ink: #3e2a00;
+      --color-ink-strong: #2c1e00;
+    }
+
+    :host(.type-error) {
+      --color-main: #d32f2f;
+      --color-bg: rgba(211,47,47,0.10);
+      --color-border: rgba(211,47,47,0.28);
+      --color-ink: #3d0a0a;
+      --color-ink-strong: #2a0707;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(var(--slideOffset, -10px)); opacity: 0; }
+      to   { transform: translateY(0); opacity: 1; }
+    }
+    :host(.pos-top)    { --slideOffset: -10px; }
+    :host(.pos-bottom) { --slideOffset:  10px; }
+    @media (prefers-reduced-motion: reduce) { .bar { animation: none; } }
